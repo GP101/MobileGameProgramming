@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Console_BouncingBall_Step2"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Console_BouncingBall_Step1", "Console_BouncingBall_Step1\Console_BouncingBall_Step1.vcxproj", "{A69633B0-83CF-42BD-A972-FD3E17D9DBD7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Console_BouncingBall_Step4", "Console_BouncingBall_Step4\Console_BouncingBall_Step4.vcxproj", "{EFB5325C-0924-488F-92D5-C0FB2B67065C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,10 @@ Global
 		{A69633B0-83CF-42BD-A972-FD3E17D9DBD7}.Debug|Win32.Build.0 = Debug|Win32
 		{A69633B0-83CF-42BD-A972-FD3E17D9DBD7}.Release|Win32.ActiveCfg = Release|Win32
 		{A69633B0-83CF-42BD-A972-FD3E17D9DBD7}.Release|Win32.Build.0 = Release|Win32
+		{EFB5325C-0924-488F-92D5-C0FB2B67065C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EFB5325C-0924-488F-92D5-C0FB2B67065C}.Debug|Win32.Build.0 = Debug|Win32
+		{EFB5325C-0924-488F-92D5-C0FB2B67065C}.Release|Win32.ActiveCfg = Release|Win32
+		{EFB5325C-0924-488F-92D5-C0FB2B67065C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
