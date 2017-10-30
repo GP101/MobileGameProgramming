@@ -11,6 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BouncingBall_Step02_GameLoo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BouncingBall_Step03_Vectors", "BouncingBall_Step03_Vectors\BouncingBall_Step03_Vectors.vcxproj", "{55995FA9-F2BC-4003-929F-0104681C8E1E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BouncingBall_Step04_Bouncing", "BouncingBall_Step04_Bouncing\BouncingBall_Step04_Bouncing.vcxproj", "{079E7320-ABF5-46C2-9D27-227783103B0F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BouncingBall_Step05_Forces", "BouncingBall_Step05_Forces\BouncingBall_Step05_Forces.vcxproj", "{196CB555-5420-4907-87A3-6B9F8D082E21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +37,14 @@ Global
 		{55995FA9-F2BC-4003-929F-0104681C8E1E}.Debug|Win32.Build.0 = Debug|Win32
 		{55995FA9-F2BC-4003-929F-0104681C8E1E}.Release|Win32.ActiveCfg = Release|Win32
 		{55995FA9-F2BC-4003-929F-0104681C8E1E}.Release|Win32.Build.0 = Release|Win32
+		{079E7320-ABF5-46C2-9D27-227783103B0F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{079E7320-ABF5-46C2-9D27-227783103B0F}.Debug|Win32.Build.0 = Debug|Win32
+		{079E7320-ABF5-46C2-9D27-227783103B0F}.Release|Win32.ActiveCfg = Release|Win32
+		{079E7320-ABF5-46C2-9D27-227783103B0F}.Release|Win32.Build.0 = Release|Win32
+		{196CB555-5420-4907-87A3-6B9F8D082E21}.Debug|Win32.ActiveCfg = Debug|Win32
+		{196CB555-5420-4907-87A3-6B9F8D082E21}.Debug|Win32.Build.0 = Debug|Win32
+		{196CB555-5420-4907-87A3-6B9F8D082E21}.Release|Win32.ActiveCfg = Release|Win32
+		{196CB555-5420-4907-87A3-6B9F8D082E21}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
