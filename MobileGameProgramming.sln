@@ -29,6 +29,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BouncingBall_Steps", "Win32
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Win32DrawFunction", "Win32DrawFunction\Win32DrawFunction.vcxproj", "{BC43A878-1630-4F32-AC84-F1E1348F565E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.vcxproj", "{66074A6A-E950-4234-8BF3-2EE7A0B45227}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlgorithmAStar", "AlgorithmAStar\AlgorithmAStar.vcxproj", "{1D2A952C-1C77-474E-8CDA-745ED6C7C340}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -87,6 +91,14 @@ Global
 		{BC43A878-1630-4F32-AC84-F1E1348F565E}.Debug|Win32.Build.0 = Debug|Win32
 		{BC43A878-1630-4F32-AC84-F1E1348F565E}.Release|Win32.ActiveCfg = Release|Win32
 		{BC43A878-1630-4F32-AC84-F1E1348F565E}.Release|Win32.Build.0 = Release|Win32
+		{66074A6A-E950-4234-8BF3-2EE7A0B45227}.Debug|Win32.ActiveCfg = Debug|Win32
+		{66074A6A-E950-4234-8BF3-2EE7A0B45227}.Debug|Win32.Build.0 = Debug|Win32
+		{66074A6A-E950-4234-8BF3-2EE7A0B45227}.Release|Win32.ActiveCfg = Release|Win32
+		{66074A6A-E950-4234-8BF3-2EE7A0B45227}.Release|Win32.Build.0 = Release|Win32
+		{1D2A952C-1C77-474E-8CDA-745ED6C7C340}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1D2A952C-1C77-474E-8CDA-745ED6C7C340}.Debug|Win32.Build.0 = Debug|Win32
+		{1D2A952C-1C77-474E-8CDA-745ED6C7C340}.Release|Win32.ActiveCfg = Release|Win32
+		{1D2A952C-1C77-474E-8CDA-745ED6C7C340}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
