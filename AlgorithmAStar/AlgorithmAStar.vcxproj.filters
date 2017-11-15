@@ -19,54 +19,24 @@
     <Text Include="읽어보세요_seojt.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AStar.h">
+    <ClInclude Include="KAStar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Console.h">
+    <ClInclude Include="KConsole.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics2D.h">
+    <ClInclude Include="KGen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HashTable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KogGen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="KVector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Path.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PriorityQueue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WriteLog.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CAList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MemoryBank.h">
+    <ClInclude Include="KGraphics2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Graphics2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="KVector.cpp">
+    <ClCompile Include="KGraphics2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WriteLog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

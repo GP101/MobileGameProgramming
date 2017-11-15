@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <functional>
 #include <unordered_set>
+#include <queue>
 
 struct KIntPoint3D
 {
@@ -56,6 +57,11 @@ struct AStarNode
         return location == rhs_.location;
     }
 
+    bool operator<( const AStarNode& rhs_ ) const
+    {
+        return total < rhs_.total;
+    }
+
     void Print()
     {
         printf(" location = (%i, %i, %i)\n", location.x, location.y, location.z );
@@ -91,21 +97,37 @@ struct AStarNodeEqualTo
     }
 };
 
-void main() {
-    std::unordered_set<AStarNodePtr, AStarNodeHash, AStarNodeEqualTo> uset;
+struct AStarNodeLessThan
+{
+    bool operator()(const AStarNodePtr& _Left, const AStarNodePtr& _Right) const
+    {
+        //return (*_Left < *_Right);
+        return ( *_Right < *_Left );
+    }
+};
+
+template<typename T> void print_queue(T& q) {
+    while(!q.empty()) {
+        q.top()->PrintLocation();
+        q.pop();
+    }
+    std::cout << '\n';
+}
+ 
+int main()
+{
+    std::priority_queue<AStarNodePtr, std::vector<AStarNodePtr>, AStarNodeLessThan > q2;
+
     AStarNodePtr   node;
     node.reset( new AStarNode( 1, 0, 0 ) );
-    uset.insert( node );
+    node->total = 10;
+    q2.push( node );
     node.reset( new AStarNode( 3, 0, 0 ) );
-    uset.insert( node );
+    node->total = 30;
+    q2.push( node );
     node.reset( new AStarNode( 5, 0, 0 ) );
-    uset.insert( node );
+    node->total = 20;
+    q2.push( node );
 
-    AStarNodePtr   node2;
-    node2.reset( new AStarNode( 3, 0, 0 ) );
-    auto sitor = uset.find( node2 );
-    if (sitor != uset.end())
-    {
-        (*sitor)->Print();
-    }//if
+    print_queue(q2);
 }

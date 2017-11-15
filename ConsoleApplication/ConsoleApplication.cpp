@@ -1,45 +1,111 @@
 #include <iostream>
-#include <algorithm>
+#include <memory>
+#include <string>
 #include <vector>
+#include <algorithm>
+#include <functional>
+#include <unordered_set>
 
-int main()
+struct KIntPoint3D
 {
-    std::vector<int> v{ 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
+public:
+    KIntPoint3D( int x_ = 0, int y_ = 0, int z_ = 0 )
+    {
+        x = x_;
+        y = y_;
+        z = z_;
+    }
 
-    std::make_heap(v.begin(), v.end());
+    bool operator==( const KIntPoint3D& rhs ) const
+    {
+        return x == rhs.x && y == rhs.y && z == rhs.z;
+    }
 
-    std::cout << "v: ";
-    for (auto i : v) std::cout << i << ' ';
-    std::cout << '\n';
+    int x;
+    int y;
+    int z;
+};
 
-    std::pop_heap(v.begin(), v.end()); // moves the largest to the end
+struct AStarNode;
+typedef std::shared_ptr<AStarNode>  AStarNodePtr;
+struct AStarNode
+{
+    AStarNodePtr        parent;     // parent node (zero pointer represents starting node)
+    
+    KIntPoint3D         location;   // location of node (some location representation)
+    float               cost;       // cost to get to this node
+    float               heuristic;  // heuristic cost to get to goal node
+    float               total;      // total cost (cost + heuristic estimate)
+    bool                isOpen;     // on Open list
+    bool                isClosed;   // on Closed list
+    
+    // must have default constructor for A* internal structure
+    AStarNode( int x = 0, int y = 0, int z = 0)
+    {
+        location = KIntPoint3D( x, y, z );
+        parent    = NULL;
+        cost      = 0.0f;
+        heuristic = 0.0f;
+        total     = 0.0f;
+        isOpen    = false;
+        isClosed  = false;
+    }
 
-    std::cout << "after pop_heap: ";
-    for (auto i : v) std::cout << i << ' ';
-    std::cout << '\n';
+    bool operator==( const AStarNode& rhs_ ) const
+    {
+        return location == rhs_.location;
+    }
 
-    int largest = v.back();
-    v.pop_back();  // actually removes the largest element
-    std::cout << "largest element: " << largest << '\n';
+    void Print()
+    {
+        printf(" location = (%i, %i, %i)\n", location.x, location.y, location.z );
+        printf(" cost = %g\n", cost );
+        printf(" heuristic = %g\n", heuristic );
+        printf(" total = %g\n", total);
+        printf(" open=%d, closed=%d\n", isOpen, isClosed );
+    }//Print()
 
-    std::cout << "heap without largest: ";
-    for (auto i : v) std::cout << i << ' ';
-    std::cout << '\n';
+    void PrintLocation()
+    {
+        printf("(%i, %i, %i)", location.x, location.y, location.z );
+    }//Print()
+};
 
-    //Pushes the node onto the back of the vector (the heap is now unsorted)
-    std::cout << "after push heap: ";
-    v.push_back(12);
-    //Sorts the new element into the heap
-    std::push_heap(v.begin(), v.end());
+class AStarNodeHash
+{
+public:
+    size_t operator()( const AStarNodePtr node ) const
+    {
+        size_t h1 = std::hash<int>()( node->location.x );
+        size_t h2 = std::hash<int>()( node->location.y );
+        size_t h3 = std::hash<int>()( node->location.z );
+        return h1 ^ ( h2 << 8 ) ^ ( h3 << 16 );
+    }
+};//class AStarNodeHash
 
-    for (auto i : v) std::cout << i << ' ';
-    std::cout << '\n';
+struct AStarNodeEqualTo
+{
+    bool operator()(const AStarNodePtr& _Left, const AStarNodePtr& _Right) const
+    {
+        return (*_Left == *_Right);
+    }
+};
 
-    /* output:
-    v: 16 14 10 8 7 9 3 2 4 1
-    after pop_heap: 14 8 10 4 7 9 3 2 1 16
-    largest element: 16
-    heap without largest: 14 8 10 4 7 9 3 2 1
-    after push heap: 14 12 10 4 8 9 3 2 1 7
-    */
+void main() {
+    std::unordered_set<AStarNodePtr, AStarNodeHash, AStarNodeEqualTo> uset;
+    AStarNodePtr   node;
+    node.reset( new AStarNode( 1, 0, 0 ) );
+    uset.insert( node );
+    node.reset( new AStarNode( 3, 0, 0 ) );
+    uset.insert( node );
+    node.reset( new AStarNode( 5, 0, 0 ) );
+    uset.insert( node );
+
+    AStarNodePtr   node2;
+    node2.reset( new AStarNode( 3, 0, 0 ) );
+    auto sitor = uset.find( node2 );
+    if (sitor != uset.end())
+    {
+        (*sitor)->Print();
+    }//if
 }

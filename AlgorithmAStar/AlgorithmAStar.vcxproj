@@ -80,24 +80,14 @@
     <Text Include="읽어보세요_seojt.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AStar.h" />
-    <ClInclude Include="CAList.h" />
-    <ClInclude Include="Console.h" />
-    <ClInclude Include="Graphics2D.h" />
-    <ClInclude Include="HashTable.h" />
-    <ClInclude Include="KogGen.h" />
-    <ClInclude Include="KVector.h" />
-    <ClInclude Include="MemoryBank.h" />
-    <ClInclude Include="Path.h" />
-    <ClInclude Include="PriorityQueue.h" />
-    <ClInclude Include="WriteLog.h" />
+    <ClInclude Include="KAStar.h" />
+    <ClInclude Include="KConsole.h" />
+    <ClInclude Include="KGen.h" />
+    <ClInclude Include="KGraphics2D.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Graphics2D.cpp" />
-    <ClCompile Include="KVector.cpp" />
+    <ClCompile Include="KGraphics2D.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="WriteLog.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -35,11 +35,11 @@ int main()
     for (auto i : v) std::cout << i << ' ';
     std::cout << '\n';
 
-    /* output:
-    v: 16 14 10 8 7 9 3 2 4 1
-    after pop_heap: 14 8 10 4 7 9 3 2 1 16
-    largest element: 16
-    heap without largest: 14 8 10 4 7 9 3 2 1
-    after push heap: 14 12 10 4 8 9 3 2 1 7
+    /** output:
+        v: 16 14 10 8 7 9 3 2 4 1
+        after pop_heap: 14 8 10 4 7 9 3 2 1 16
+        largest element: 16
+        heap without largest: 14 8 10 4 7 9 3 2 1
+        after push heap: 14 12 10 4 8 9 3 2 1 7
     */
 }
